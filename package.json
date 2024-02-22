@@ -1,34 +1,32 @@
 {
-	"name": "@nosweat/scrabble",
-	"version": "1.0.1",
-	"description": "Simple scrabble solver using a trie data structure in Node.",
-	"main": "index.js",
-	"scripts": {
-		"test": "jest",
-		"generate": "node generate",
-		"bump:patch": "npm version patch -m 'Version patch bump to %s.'",
-		"deploy:npm": "npm publish --access public"
-	},
-	"keywords": [
-		"scrabble",
-		"trie"
-	],
-	"author": "Cody Barr <cody.barr@gmail.com>",
-	"license": "MIT",
-	"dependencies": {},
-	"devDependencies": {
-		"inquirer": "^7.0.0",
-		"jest": "^24.9.0"
-	},
-	"directories": {
-		"test": "test"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/codybarr/scrabble.git"
-	},
-	"bugs": {
-		"url": "https://github.com/codybarr/scrabble/issues"
-	},
-	"homepage": "https://github.com/codybarr/scrabble#readme"
+  "name": "spelling-bee-word-list",
+  "version": "1.0.1",
+  "description": "Generator for spelling bee word lists.",
+  "exports": "./index.js",
+  "scripts": {
+    "test": "ava",
+    "bump:patch": "npm version patch -m 'Version patch bump to %s.'",
+    "deploy:npm": "npm publish --access public"
+  },
+  "keywords": [],
+  "author": "Daniel Wilson",
+  "license": "MIT",
+  "dependencies": {
+    "pick-random": "^4.0.0"
+  },
+  "type": "module",
+  "devDependencies": {
+    "ava": "^6.1.1"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daniellytle/spelling-bee-word-list.git"
+  },
+  "bugs": {
+    "url": "https://github.com/daniellytle/spelling-bee-word-list/issues"
+  },
+  "homepage": "https://github.com/daniellytle/spelling-bee-word-list#readme"
 }
