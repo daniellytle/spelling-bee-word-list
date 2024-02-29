@@ -2,7 +2,7 @@ import wordlist from "./wordlists/twl06.js"
 import pickRandom from "pick-random"
 
 class SpellingBee {
-  constructor() {
+  getRandomGame() {
     let letters, validWords
     do {
       letters = this.getValidLetters()
@@ -38,6 +38,27 @@ class SpellingBee {
           word.includes(letters[0])
       )
     )
+  }
+
+  getGameForDate(date) {
+    // find all pangrams
+    const pangrams = wordlist.filter(
+      (word) => new Set(word.split("")).size === 7
+    )
+    // get specific pangram for date
+    const oneDay = 24 * 60 * 60 * 1000;
+    const secondDate = new Date(2000, 3, 1);
+    const index = Math.round(Math.abs((date - secondDate) / oneDay));
+    const letters = Array.from(new Set(pangrams[index % pangrams.length]))
+    const validWords = new Set(wordlist.filter(
+      (word) =>
+        word.split("").every((a) => letters.includes(a)) &&
+        word.includes(letters[0])
+    ))
+    return {
+      letters,
+      validWords,
+    }
   }
 }
 

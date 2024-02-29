@@ -1,17 +1,27 @@
 import test from "ava"
 import { SpellingBee } from "./index.js"
 
-test("Game picks seven unique letters", (t) => {
-  const { letters } = new SpellingBee()
+test("getRandomGame game picks seven unique letters", (t) => {
+  const { letters } = new SpellingBee().getRandomGame()
   t.is(letters.length, 7)
 })
 
-test("Game picks at least one vowel", (t) => {
-  const { letters } = new SpellingBee()
+test("getRandomGame game picks at least one vowel", (t) => {
+  const { letters } = new SpellingBee().getRandomGame()
   t.truthy(letters.some((letter) => ["aeiou".split("").includes(letter)]))
 })
 
-test("Game has at least twenty valid words", (t) => {
-  const { validWords } = new SpellingBee()
+test("getRandomGame game has at least twenty valid words", (t) => {
+  const { validWords } = new SpellingBee().getRandomGame()
+  t.true(validWords.size > 20)
+})
+
+test("getGameForDate game picks seven unique letters", (t) => {
+  const { letters } = new SpellingBee().getGameForDate(new Date())
+  t.is(letters.length, 7)
+})
+
+test("getGameForDate game has at least twenty valid words", (t) => {
+  const { validWords } = new SpellingBee().getGameForDate(new Date())
   t.true(validWords.size > 20)
 })
