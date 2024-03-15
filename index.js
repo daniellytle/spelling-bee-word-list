@@ -1,5 +1,6 @@
 import wordlist from "./wordlists/twl06.js"
 import pickRandom from "pick-random"
+import { differenceInDays } from "date-fns"
 
 class SpellingBee {
   getRandomGame() {
@@ -46,9 +47,8 @@ class SpellingBee {
       (word) => new Set(word.split("")).size === 7
     )
     // get specific pangram for date
-    const oneDay = 24 * 60 * 60 * 1000;
-    const secondDate = new Date(2000, 3, 1);
-    const index = Math.round(Math.abs((date - secondDate) / oneDay));
+    const startDate = new Date(new Date().setFullYear(2000, 0, 1));
+    const index = differenceInDays(new Date(), startDate);
     const letters = Array.from(new Set(pangrams[index % pangrams.length]))
     const validWords = new Set(wordlist.filter(
       (word) =>

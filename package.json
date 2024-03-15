@@ -12,6 +12,7 @@
   "author": "Daniel Wilson",
   "license": "MIT",
   "dependencies": {
+    "date-fns": "^3.5.0",
     "pick-random": "^4.0.0"
   },
   "type": "module",
