@@ -47,8 +47,8 @@ class SpellingBee {
       (word) => new Set(word.split("")).size === 7
     )
     // get specific pangram for date
-    const startDate = new Date(new Date().setFullYear(2000, 0, 1));
-    const index = differenceInDays(new Date(), startDate);
+    const startDate = new Date(2000, 0, 1, 0, 0, 0);
+    const index = differenceInDays(date, startDate);
     const letters = Array.from(new Set(pangrams[index % pangrams.length]))
     const validWords = new Set(wordlist.filter(
       (word) =>

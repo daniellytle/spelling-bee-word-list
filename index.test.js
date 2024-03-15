@@ -25,3 +25,11 @@ test("getGameForDate game has at least twenty valid words", (t) => {
   const { validWords } = new SpellingBee().getGameForDate(new Date())
   t.true(validWords.size > 20)
 })
+
+test("getGameForDate returns a different game set after midnight in a timezone", (t) => {
+  const oldDate = new Date(2024, 2, 13, 23, 0)
+  const newDate = new Date(2024, 2, 14, 0, 0)
+  const oldDateLetters = new SpellingBee().getGameForDate(oldDate).letters
+  const newDateLetters = new SpellingBee().getGameForDate(newDate).letters
+  t.true(oldDateLetters.toString() != newDateLetters.toString())
+})
