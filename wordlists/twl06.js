@@ -19416,7 +19416,7 @@ export default [
   'tearily',
   'podzol',
   'ignited',
-  'minuse',
+  'minus',
   'minty',
   'antihuman',
   'paratroop',
